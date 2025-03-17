@@ -1,4 +1,4 @@
-🎵 Song Stats
+# Song Stats 🎵 
 
 Song Stats is a Java-based music analysis tool that processes and analyzes song data stored in CSV files. It enables users to compare songs, analyze similarities, and manage music data efficiently.
 
