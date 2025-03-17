@@ -1,12 +1,15 @@
 # Music Recommendation System – CSV Data & Euclidean Distance Calculation
 
 Overview
+
 This project processes a CSV file containing user song ratings, normalizes the ratings, and calculates the Euclidean distance between users to determine similarity in music preferences. It utilizes:
 
 CSV reading and parsing for structured data processing
 Data normalization to ensure fair comparisons between users
 Euclidean distance metric to measure similarity between users' song preferences
 TreeMaps (Java’s TreeMap<K, V>) for efficient data storage and retrieval
+
+
 How It Works
 1. Reading the CSV File
 The program reads a CSV file containing user IDs, song titles, and corresponding ratings. A CSV file format might look like this:
@@ -21,12 +24,16 @@ The data is stored using Java's built-in CSV reading methods (e.g., BufferedRead
 
 Outer TreeMap (User ID as Key): Efficiently organizes users in ascending order.
 Inner TreeMap (Song Title as Key, Rating as Value): Stores ratings per user in a structured format.
+
+
 2. Normalizing the Ratings
 To ensure fair comparisons between users with different rating tendencies, the ratings are normalized by:
 
 Finding the mean rating per user
 Adjusting each rating by subtracting the user’s mean rating
 Resulting values represent a user's relative preference rather than absolute scores
+
+
 3. Calculating Euclidean Distance
 To compare user preferences, we compute the Euclidean distance between users:
 
@@ -41,6 +48,8 @@ Higher values indicate less similarity
 Music Recommendations: Identify users with similar preferences and suggest new songs.
 Scalability: Expand to larger datasets with more efficient storage techniques.
 Alternative Similarity Measures: Implement Pearson correlation for improved accuracy.
+
+
 Getting Started
 Requirements
 Java (JDK 8 or higher)
