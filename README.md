@@ -1,56 +1,64 @@
-# Music Recommendation System – CSV Data & Euclidean Distance Calculation
+🎵 Song Stats
 
-Overview
+Song Stats is a Java-based music analysis tool that processes and analyzes song data stored in CSV files. It enables users to compare songs, analyze similarities, and manage music data efficiently.
 
-This project processes a CSV file containing user song ratings, normalizes the ratings, and calculates the Euclidean distance between users to determine similarity in music preferences. It utilizes:
+🎮 Features
 
-CSV reading and parsing for structured data processing
-Data normalization to ensure fair comparisons between users
-Euclidean distance metric to measure similarity between users' song preferences
-TreeMaps (Java’s TreeMap<K, V>) for efficient data storage and retrieval
+CSV Data Management: Read and write song data using CSV files.
 
+Song Similarity Calculation: Compare songs based on their attributes.
 
-How It Works
-1. Reading the CSV File
-The program reads a CSV file containing user IDs, song titles, and corresponding ratings. A CSV file format might look like this:
+User Data Tracking: Store and analyze user interactions with songs.
 
-UserID, Song, Rating  
-101, "Bohemian Rhapsody", 4.5  
-102, "Bohemian Rhapsody", 3.8  
-101, "Stairway to Heaven", 5.0  
-102, "Stairway to Heaven", 4.2  
+🔧 Technologies Used
 
-The data is stored using Java's built-in CSV reading methods (e.g., BufferedReader or Scanner) and mapped into a TreeMap<String, TreeMap<String, Double>> structure:
+Language: Java
 
-Outer TreeMap (User ID as Key): Efficiently organizes users in ascending order.
-Inner TreeMap (Song Title as Key, Rating as Value): Stores ratings per user in a structured format.
+Data Storage: CSV files
 
+Core Components:
 
-2. Normalizing the Ratings
-To ensure fair comparisons between users with different rating tendencies, the ratings are normalized by:
+CSVReader.java - Reads song data from CSV files.
 
-Finding the mean rating per user
-Adjusting each rating by subtracting the user’s mean rating
-Resulting values represent a user's relative preference rather than absolute scores
+CSVWriter.java - Writes processed data to CSV files.
 
+SimilarityCalculator.java - Computes similarity between songs.
 
-3. Calculating Euclidean Distance
-To compare user preferences, we compute the Euclidean distance between users:
+Song.java - Represents song attributes.
 
-Only songs rated by both users are considered
-The squared difference of ratings for each shared song is summed
-The square root of this sum gives the final distance score, where:
-Lower values indicate more similar taste
-Higher values indicate less similarity
-​
- 
-4. Applications & Future Improvements
-Music Recommendations: Identify users with similar preferences and suggest new songs.
-Scalability: Expand to larger datasets with more efficient storage techniques.
-Alternative Similarity Measures: Implement Pearson correlation for improved accuracy.
+User.java - Manages user-related song data.
 
+🚀 How to Run
 
-Getting Started
-Requirements
-Java (JDK 8 or higher)
-A CSV file formatted as UserID, Song, Rating
+Clone the repository:
+
+git clone https://github.com/yourusername/Song-Stats.git
+
+Navigate to the project folder:
+
+cd Song-Stats
+
+Compile and run the program:
+
+javac Main.java
+
+Calculating similarity: java Main <input.csv> <output.csv> <-u>
+Calculating standard deviation: java Main <input.csv> <output.csv> 
+
+📌 Future Enhancements
+
+Integration with streaming APIs to fetch real-time music data.
+
+GUI implementation for better user interaction.
+
+Advanced similarity algorithms to improve recommendations.
+
+📬 Contributing
+
+Interested in contributing? Feel free to fork the repository and submit a pull request!
+
+📜 License
+
+This project is open-source and available under the MIT License.
+
+Enjoy analyzing music with Song Stats! 🎶📊
